@@ -1,0 +1,145 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #eceff1, #cfd9df);
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    background-color:  #333333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    border-bottom: 4px solid #555555;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #d4edda;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+}
+
+table th,
+table td {
+    border: 1px solid #dddddd;
+    padding: 8px 10px;
+}
+
+table th {
+    background-color: #555555;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #d4edda;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form button,
+form label {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+
+form button {
+    cursor: pointer;
+    background-color: #555555;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #555555;
+}
+
+/* Section Headings */
+h1,
+h2 {
+    margin: 15px 0;
+    color: #333;
+}
+
+/* Footer Section for Manage Wallpapers */
+.walls-container img {
+    height: 100px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.walls-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table,
+    form {
+        font-size: 0.9em;
+    }
+}

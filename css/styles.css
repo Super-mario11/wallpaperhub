@@ -1,0 +1,486 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #000000, #434343);
+    color: #ecf0f1;
+}
+
+/* Navbar */
+nav {
+    background-color: rgba(0, 2, 0, 0.9);
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #18bc9c;
+}
+
+/* Main Content */
+main {
+    padding-top: 70px;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Wallpaper Grid */
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.wallpaper-container {
+    border: 3px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.wallpaper-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.wallpaper-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay for Buttons */
+.image-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.favorite-btn,
+.download-btn {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.favorite-btn:hover,
+.download-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.favorite-btn span,
+.download-btn span {
+    pointer-events: none;
+}
+
+/* Favorite Grid */
+.favorite-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.favorite-container {
+    border: 2px dashed #18bc9c;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.favorite-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.favorite-container:hover img {
+    transform: scale(1.05);
+}
+
+.favorite-container:hover {
+    border-color: #ecf0f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wallpaper-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .favorite-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .wallpaper-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .favorite-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Centering the form using flexbox */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Glass Effect Styling */
+.glass-form {
+    background: rgba(255, 255, 255, 0.2); /* Glass effect with transparency */
+    backdrop-filter: blur(8px); /* Apply a blurred background */
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Header Styles */
+.glass-form h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Form Input Styling */
+.glass-form input[type="text"],
+.glass-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.glass-form input[type="text"]:focus,
+.glass-form input[type="password"]:focus {
+    border-color: #18bc9c;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Submit Button Styling */
+.glass-form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #18bc9c;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.glass-form button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+.glass-form ::placeholder {
+    text-align: center;
+    color: #ffffff;
+}
+
+.glass-form a {
+    text-decoration: none;
+    color: #18bc9c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input, form select, form button {
+    margin: 5px 0;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.categories-list {
+    list-style: none;
+    padding: 0;
+}
+
+.categories-list li {
+    margin: 10px 0;
+}
+
+.categories-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.categories-list a:hover {
+    color: #007BFF;
+}
+
+form {
+    margin: 20px 0;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.result {
+    font-size: larger;
+    padding: 20px;
+    color: red;
+}
+
+form button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    background: white;
+}
+
+/* Categories List */
+.categories-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.categories-list li {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+}
+
+.categories-list li:hover {
+    background: #1abc9c;
+    transform: scale(1.05);
+}
+
+.categories-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Search Input */
+.search-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.search-container input[type="text"] {
+    padding: 8px 15px;
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid #7f8c8d;
+    border-radius: 4px;
+}
+
+/* Categories List */
+.categories-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.categories-list li {
+    background: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.categories-list li:hover {
+    background: #3498db;
+    transform: scale(1.05);
+}
+
+/* Wallpaper Grid */
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+/* Home Page Styles */
+.home-container {
+    height: 100%;
+    background: url('../assets/doodle.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.home-overlay {
+    position: absolute;
+    padding-top: 150px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay for better text readability */
+    filter: blur(5px); /* Blur effect for the overlay */
+}
+
+.home-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    max-width: 600px;
+    margin: auto;
+}
+
+.home-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.home-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.home-actions a {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.home-actions a:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+.home-link {
+    display: inline-block;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    margin: 5px;
+}
+
+.home-link:hover {
+    color: #bdc3c7;
+}
